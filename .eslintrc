@@ -1,0 +1,15 @@
+{
+  "extends": "eslint-config-ahd",
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
+  "rules": {},
+  "settings": {
+    // Manually set the version to disable automated detection of the "react" dependency.
+    "react": { "version": "detect" }
+  }
+}
