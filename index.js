@@ -1,8 +1,5 @@
 module.exports = {
-  extends: [
-    'stylelint-config-recommended-scss',
-    'stylelint-config-prettier-scss',
-  ],
+  extends: ['stylelint-config-recommended-scss', 'stylelint-config-prettier-scss'],
   plugins: ['stylelint-declaration-strict-value', 'stylelint-order'],
   rules: {
     'block-no-empty': true,
@@ -20,10 +17,7 @@ module.exports = {
       // Only allow logical values.
       'text-align': ['start', 'end', 'center'],
     },
-    'declaration-property-value-disallowed-list': [
-      { '/^border/': ['none'] },
-      { severity: 'error' },
-    ],
+    'declaration-property-value-disallowed-list': [{ '/^border/': ['none'] }, { severity: 'error' }],
     'declaration-no-important': true,
     'font-family-no-duplicate-names': true,
     'function-calc-no-unspaced-operator': true,
@@ -50,10 +44,7 @@ module.exports = {
     ],
     'property-no-unknown': true,
     'property-no-vendor-prefix': true,
-    'rule-empty-line-before': [
-      'always',
-      { except: ['after-single-line-comment', 'first-nested'] },
-    ],
+    'rule-empty-line-before': ['always', { except: ['after-single-line-comment', 'first-nested'] }],
     'scale-unlimited/declaration-strict-value': [
       [
         // Colors should always be defined from variables or functions.
@@ -105,10 +96,7 @@ module.exports = {
     ],
     'scss/at-import-partial-extension': null,
     'scss/at-import-partial-extension-blacklist': ['scss'],
-    'scss/media-feature-value-dollar-variable': [
-      'always',
-      { ignore: ['keywords'] },
-    ],
+    'scss/media-feature-value-dollar-variable': ['always', { ignore: ['keywords'] }],
     'scss/selector-no-redundant-nesting-selector': true,
     'scss/selector-no-union-class-name': true,
     'selector-class-pattern': [

@@ -14,12 +14,9 @@ const getUrl = (rule) => {
   const [group, ruleName] = parts;
 
   const nonStylelintRules = {
-    'order': () =>
-      `https://github.com/hudochenkov/stylelint-order/blob/master/rules/${ruleName}/README.md`,
-    'scale-unlimited': () =>
-      'https://github.com/AndyOGo/stylelint-declaration-strict-value',
-    'scss': () =>
-      `https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/${ruleName}/README.md`,
+    'order': () => `https://github.com/hudochenkov/stylelint-order/blob/master/rules/${ruleName}/README.md`,
+    'scale-unlimited': () => 'https://github.com/AndyOGo/stylelint-declaration-strict-value',
+    'scss': () => `https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/${ruleName}/README.md`,
   };
 
   return (nonStylelintRules[group] || (() => null))();
@@ -33,10 +30,7 @@ const getUrl = (rule) => {
  * @param {object?} options
  * @returns {string}
  */
-const getPrettyConfig = (
-  config,
-  { defaultValue = 'Enabled', maxLength = 75 } = {},
-) => {
+const getPrettyConfig = (config, { defaultValue = 'Enabled', maxLength = 75 } = {}) => {
   if (!Array.isArray(config)) return defaultValue;
 
   const configItems = config.filter((item) => typeof item !== 'boolean');
@@ -72,19 +66,12 @@ const createMarkdownTable = (rules) => {
     .sort(([ruleA], [ruleB]) => ruleA.localeCompare(ruleB));
 
   const maxRuleLength =
-    enabledRules.reduce(
-      (maxLength, [rule]) =>
-        rule.length > maxLength ? rule.length : maxLength,
-      0,
-    ) + 7; // adding padding + room for links
+    enabledRules.reduce((maxLength, [rule]) => (rule.length > maxLength ? rule.length : maxLength), 0) + 7; // adding padding + room for links
 
-  const prettyConfigs = enabledRules.map(([, config]) =>
-    getPrettyConfig(config),
-  );
+  const prettyConfigs = enabledRules.map(([, config]) => getPrettyConfig(config));
 
   const maxConfigLength = prettyConfigs.reduce(
-    (maxLength, prettyConfig) =>
-      prettyConfig.length > maxLength ? prettyConfig.length : maxLength,
+    (maxLength, prettyConfig) => (prettyConfig.length > maxLength ? prettyConfig.length : maxLength),
     0,
   );
 
@@ -96,22 +83,14 @@ const createMarkdownTable = (rules) => {
     const ruleFormatted = url ? `[${ruleBackticks}][${index}]` : ruleBackticks;
 
     return [
-      `| ${ruleFormatted.padEnd(maxRuleLength + 1, ' ')} | ${prettyConfigs[
-        index
-      ].padEnd(maxConfigLength, ' ')} |`,
+      `| ${ruleFormatted.padEnd(maxRuleLength + 1, ' ')} | ${prettyConfigs[index].padEnd(maxConfigLength, ' ')} |`,
       url && `[${index}]: ${url}`,
     ];
   });
 
   const tableHeader = [
-    `| ${'Rule'.padEnd(maxRuleLength, ' ')}  | ${'Config'.padEnd(
-      maxConfigLength,
-      ' ',
-    )} |`,
-    `| ${''.padEnd(maxRuleLength, '-')}- | ${''.padEnd(
-      maxConfigLength,
-      '-',
-    )} |`,
+    `| ${'Rule'.padEnd(maxRuleLength, ' ')}  | ${'Config'.padEnd(maxConfigLength, ' ')} |`,
+    `| ${''.padEnd(maxRuleLength, '-')}- | ${''.padEnd(maxConfigLength, '-')} |`,
   ].join('\n');
 
   return `
@@ -152,9 +131,7 @@ const writeRules = async () => {
 
     if (isCheck) {
       if (newContent !== content) {
-        process.stderr.write(
-          'Rules have not been written, run `npm run write-rules`\n',
-        );
+        process.stderr.write('Rules have not been written, run `npm run write-rules`\n');
         process.exit(1);
       }
       process.exit(0);

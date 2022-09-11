@@ -1,15 +1,15 @@
-# [stylelint-config-ahd](https://www.npmjs.com/package/stylelint-config-ahd) [<img src="https://raw.githubusercontent.com/wagtail/stylelint-config-wagtail/main/.github/stylelint-logo.svg?sanitize=true" alt="Stylelint" width="90" height="90" align="right">](https://stylelint.io)
+# [@ahdcreative/stylelint-config-ahd](https://www.npmjs.com/package/@ahdcreative/stylelint-config-ahd) [<img src="https://raw.githubusercontent.com/wagtail/stylelint-config-wagtail/main/.github/stylelint-logo.svg?sanitize=true" alt="Stylelint" width="90" height="90" align="right">](https://stylelint.io)
 
-[![stylelint-config-ahd on npm](https://img.shields.io/npm/v/@wagtail/stylelint-config-ahd.svg)](https://www.npmjs.com/package/stylelint-config-ahd)
+[![@ahdcreative/stylelint-config-ahd on npm](https://img.shields.io/npm/v/@ahdcreative/stylelint-config-ahd.svg)](https://www.npmjs.com/package/@ahdcreative/stylelint-config-ahd)
 
-> Shareable stylelint config for CSS and SCSS, following AHD Creative code style.
+> Shareable stylelint config for CSS and SCSS, following AHD Creative code style
 
 ## Usage
 
 Our default export contains all of our Stylelint rules, along with specific plugins for SCSS syntax.
 
-1. Run `npm install stylelint stylelint-config-ahd --save-dev`
-2. Add `"extends": "stylelint-config-ahd"` to your `.stylelintrc`
+1. Run `npm install stylelint @ahdceative/stylelint-config-ahd --save-dev`
+2. Add `"extends": "@ahdcreative/stylelint-config-ahd"` to your `.stylelintrc`
 
 ## Links
 
@@ -39,6 +39,9 @@ Our default export contains all of our Stylelint rules, along with specific plug
 
 ### Rules
 
+<!-- AUTO GENERATED - run `npm run write-rules` to update - do not modify manually -->
+<!-- RULES:START -->
+# [stylelint-config
 | Rule                                                         | Config                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------------- |
 | [`block-no-empty`][0]                                        | Enabled                                                             |
@@ -104,7 +107,6 @@ Our default export contains all of our Stylelint rules, along with specific plug
 | [`string-no-newline`][60]                                    | Enabled                                                             |
 | [`unit-no-unknown`][61]                                      | Enabled                                                             |
 | [`value-no-vendor-prefix`][62]                               | Enabled                                                             |
-
 [config]: https://github.com/ahdcreative/stylelint-config-ahd/blob/main/index.js
 [0]: https://stylelint.io/user-guide/rules/list/block-no-empty/
 [1]: https://stylelint.io/user-guide/rules/list/color-hex-length/
