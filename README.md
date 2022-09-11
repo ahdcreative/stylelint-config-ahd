@@ -41,7 +41,9 @@ Our default export contains all of our Stylelint rules, along with specific plug
 
 <!-- AUTO GENERATED - run `npm run write-rules` to update - do not modify manually -->
 <!-- RULES:START -->
+
 # [stylelint-config
+
 | Rule                                                         | Config                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------------- |
 | [`block-no-empty`][0]                                        | Enabled                                                             |
@@ -107,6 +109,7 @@ Our default export contains all of our Stylelint rules, along with specific plug
 | [`string-no-newline`][60]                                    | Enabled                                                             |
 | [`unit-no-unknown`][61]                                      | Enabled                                                             |
 | [`value-no-vendor-prefix`][62]                               | Enabled                                                             |
+
 [config]: https://github.com/ahdcreative/stylelint-config-ahd/blob/main/index.js
 [0]: https://stylelint.io/user-guide/rules/list/block-no-empty/
 [1]: https://stylelint.io/user-guide/rules/list/color-hex-length/
