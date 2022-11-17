@@ -14,9 +14,9 @@ const getUrl = (rule) => {
   const [group, ruleName] = parts;
 
   const nonStylelintRules = {
-    'order': () => `https://github.com/hudochenkov/stylelint-order/blob/master/rules/${ruleName}/README.md`,
+    order: () => `https://github.com/hudochenkov/stylelint-order/blob/master/rules/${ruleName}/README.md`,
     'scale-unlimited': () => 'https://github.com/AndyOGo/stylelint-declaration-strict-value',
-    'scss': () => `https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/${ruleName}/README.md`,
+    scss: () => `https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/${ruleName}/README.md`,
   };
 
   return (nonStylelintRules[group] || (() => null))();
@@ -65,8 +65,7 @@ const createMarkdownTable = (rules) => {
     .filter(([, value]) => value !== null)
     .sort(([ruleA], [ruleB]) => ruleA.localeCompare(ruleB));
 
-  const maxRuleLength =
-    enabledRules.reduce((maxLength, [rule]) => (rule.length > maxLength ? rule.length : maxLength), 0) + 7; // adding padding + room for links
+  const maxRuleLength = enabledRules.reduce((maxLength, [rule]) => (rule.length > maxLength ? rule.length : maxLength), 0) + 7; // adding padding + room for links
 
   const prettyConfigs = enabledRules.map(([, config]) => getPrettyConfig(config));
 
@@ -98,9 +97,9 @@ ${tableHeader}
 ${tableRows.map(([row]) => row).join('\n')}
 [config]: https://github.com/ahdcreative/stylelint-config-ahd/blob/main/index.js
 ${tableRows
-  .map(([, link]) => link)
-  .filter(Boolean)
-  .join('\n')}
+    .map(([, link]) => link)
+    .filter(Boolean)
+    .join('\n')}
 `;
 };
 

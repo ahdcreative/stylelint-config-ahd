@@ -11,9 +11,9 @@ module.exports = {
     'declaration-block-single-line-max-declarations': 1,
     'declaration-property-value-allowed-list': {
       // Only allow logical values, and resets.
-      'clear': ['both', 'none'],
+      clear: ['both', 'none'],
       // Only allow logical values, and resets.
-      'float': ['inline-start', 'inline-end', 'none', 'unset'],
+      float: ['inline-start', 'inline-end', 'none', 'unset'],
       // Only allow logical values.
       'text-align': ['start', 'end', 'center'],
     },

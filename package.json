@@ -1,6 +1,6 @@
 {
   "name": "@ahdcreative/stylelint-config-ahd",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Shareable stylelint config for CSS and SCSS, following AHD Creative code style.",
   "main": "index.js",
   "prettier": "@ahdcreative/prettier-config-ahd",
@@ -27,16 +27,13 @@
     "stylelint-order": "^5.0.0"
   },
   "devDependencies": {
-    "@ahdcreative/eslint-config-ahd": "1.0.8",
-    "@ahdcreative/prettier-config-ahd": "1.0.5",
-    "eslint": "8.23.0",
+    "@ahdcreative/eslint-config-ahd-base": "^1.0.8",
+    "eslint": "^8.2.0",
+    "eslint-plugin-import": "^2.26.0",
     "jest": "28.1.3",
-    "prettier": "2.7.1",
     "stylelint": "14.11.0"
   },
   "scripts": {
-    "format": "prettier --cache --write '**/*.{js,md,css,scss,yaml,yml,json}'",
-    "lint:format": "prettier --cache --check '**/*.{js,md,css,scss,yaml,yml,json}'",
     "lint:js": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache ./ --max-warnings 0 --report-unused-disable-directives",
     "lint:readme": "node write-rules.js --check",
     "lint": "npm run lint:format && npm run lint:js && npm run lint:readme",
