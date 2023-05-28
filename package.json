@@ -21,7 +21,7 @@
     "stylelint": ">=14.1.0"
   },
   "dependencies": {
-    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-recommended-scss": "^7.0.0",
     "stylelint-declaration-strict-value": "^1.8.0",
     "stylelint-order": "^5.0.0"
